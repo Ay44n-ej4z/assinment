@@ -15,7 +15,9 @@ const App = () => {
   const allBranches = branchOneProducts.concat(branchTwoProducts, branchThreeProducts);
   
 const uniqueMap = new Map();
-
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 const removeDuplicateValue = allBranches.reduce((result, item) => {
   const key = item.id + '|' + item.name;
   if (!uniqueMap.has(key)) {
@@ -62,14 +64,14 @@ const removeDuplicateValue = allBranches.reduce((result, item) => {
             .map((product) => (
               <tr key={product.id}>
                 <td>{product.name}</td>
-                <td>{(product.unitPrice * product.sold).toFixed(2)}</td>
+                <td>{formatNumber((product.unitPrice * product.sold).toFixed(2))}</td>
               </tr>
             ))}
         </tbody>
         <tfoot>
           <tr>
             <td>Total Revenue for Displayed Products</td>
-            <td>{totalRevenue.toFixed(2)}</td>
+            <td>{formatNumber(totalRevenue.toFixed(2))}</td>
           </tr>
         </tfoot>
       </table>

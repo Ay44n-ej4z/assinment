@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+
+.page-table {
+  margin: 30px auto;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  width: 98%;
+  padding: 8px;
+  border: 1px solid #978a8ae4;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.15);
+}
+input::placeholder {
+  color: #f1f1f1; 
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff37;
+}
+th {
+  font-family: 'Roboto', sans-serif;
+
+}
+th,
+td {
+  padding: 10px;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+thead th {
+  background-color: #4c63af;
+  color: #ecedfc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f219;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+/* Add media query for responsive design */
+@media screen and (max-width: 600px) {
+  table {
+    font-size: 14px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  thead th {
+    padding: 8px;
   }
 }
